@@ -55,7 +55,6 @@ def calc_ndvi (img):
 
 
 
-
 # display the image
 display(original, 'Original')
 
