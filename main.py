@@ -1,3 +1,18 @@
+#code that makes the photos
+from time import sleep
+from picamera import PiCamera
+from pathlib import Path
+
+base_folder = Path(__file__).parent.resolve()
+
+camera = PiCamera()
+camera.resolution = (1296,972)
+camera.start_preview()
+for i in range(1):   #all'interno dell' range dobbiamo scegliere quante foto fare scattare al programma durante le tre ore
+    # Camera warm-up time
+    sleep(2)
+    camera.capture(f"{base_folder}/image%s.jpg" % i)
+
 # NDVI INDEX SIMULATION
 
 #import modules
