@@ -1,0 +1,21 @@
+CODICE
+- sistemare codice (tommi)
+- sistemare problema camera
+- aggiungere codice posizione ISS
+
+
+MACHINE LEARNING 
+- classificare le immagini in directory con criterio 
+- selezionare le immagini buone 
+
+POST ESPERIMENTO 
+- confronto con immagini
+- prepare una lista di immagini per confronto 
+
+- decidere qunate immagini fare
+
+ALTRO
+3gB a disposizione:
+foto = 3Mb
+tot fot = 1000 ( in realta 2000 ma nella meta del tempo è buio e scarta)
+1 foto ogni 6s
