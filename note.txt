@@ -19,3 +19,11 @@ ALTRO
 foto = 3Mb
 tot fot = 1000 ( in realta 2000 ma nella meta del tempo è buio e scarta)
 1 foto ogni 6s
+
+DA RIVEDERE
+- nel webinar dicono che nuova camera fa immagini molto più grandi tipo 12mB
+- non è più necessario ML perche con la nuova libreria ce il metodo is_light che ti dice se è buio o notte 
+quindi basta far girare il codice solo di giorno. DOmanda: che cosa facciamo di notte?
+- in astro pi ce pre installato digicam che è sofwear che localizza immagine.Dobbiamo seguire guida online e 
+fare in modo che imamgini abbiano dentro anche posizione in modo che nel post possiamo analizzare
+- i dati e immagini che abbaimo non sono con filtro IR quindi sono praticamente inutili.
