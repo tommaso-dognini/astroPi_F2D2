@@ -2,8 +2,9 @@ CODICE
 - sistemare codice 
 - sistemare problema camera
 - aggiungere codice posizione ISS
-- aggiungere codie che riconosce giorno- notte
++ aggiungere codie che riconosce giorno- notte
 - aggiungere codice per immagini + posizione
+- verificare versione su computerino 
 
 
 POST ESPERIMENTO 
@@ -24,6 +25,9 @@ quindi basta far girare il codice solo di giorno. DOmanda: che cosa facciamo di 
 - in astro pi ce pre installato digicam che è sofwear che localizza immagine.Dobbiamo seguire guida online e 
 fare in modo che imamgini abbiano dentro anche posizione in modo che nel post possiamo analizzare
 - i dati e immagini che abbaimo non sono con filtro IR quindi sono praticamente inutili.
+
+
+
 
 
 #code that makes the photos
