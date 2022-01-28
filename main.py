@@ -1,7 +1,7 @@
 #code that makes the photos
 from time import sleep
 from picamera import PiCamera
-from pathlib import Path
+# from pathlib import Path
 import cv2
 import numpy as np
 from fastiecm import fastiecm
@@ -29,7 +29,7 @@ def calc_ndvi (img):
     ndvi = (b.astype(float) - r) / bottom
     return ndvi
 
-base_folder = Path(__file__).parent.resolve()
+#base_folder = Path(__file__).parent.resolve()
 
 camera = PiCamera()
 camera.resolution = (1296,972) #qui dobbiamo scegliere la risoluzione delle immagini che vogliamo 
@@ -37,16 +37,16 @@ camera.start_preview()
 for i in range(1):   #all'interno dell' range dobbiamo scegliere quante foto fare scattare al programma durante le tre ore
     # Camera warm-up time
     sleep(2)
-    camera.capture(f"{base_folder}/image%s.jpg"% i)
+    camera.capture("img/image%s.jpg" % i) 
     # load the original img
-    original = cv2.imread('imgage%s.jpg'% i)
+    original = cv2.imread("imgage%s.jpg" % i)
     contrasted = contrast(original)
     ndvi = calc_ndvi(contrasted)
     ndvi_contrasted = contrast(ndvi)
     # color map the dark ndvi contrasted img
     color_mapped_prep = ndvi_contrasted.astype(np.uint8)
     color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
-    cv2.imwrite(f"{base_folder}/imagendvi%s.jpg" % i, color_mapped_image)
+    cv2.imwrite("img/imageNdvi%s.jpg" % i, color_mapped_image)
 
 
 
