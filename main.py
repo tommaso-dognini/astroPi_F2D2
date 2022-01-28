@@ -43,25 +43,23 @@ while True:
         #there is light: we run our experiment
         #base_folder = Path(__file__).parent.resolve()
 
-camera = PiCamera()
-camera.resolution = (1296,972) #qui dobbiamo scegliere la risoluzione delle immagini che vogliamo 
-camera.start_preview()
-for i in range(1):   #all'interno dell' range dobbiamo scegliere quante foto fare scattare al programma durante le tre ore
-    # Camera warm-up time
-    sleep(2)
-    camera.capture("img/image%s.jpg" % i) 
-    # load the original img
-    original = cv2.imread("imgage%s.jpg" % i)
-    contrasted = contrast(original)
-    ndvi = calc_ndvi(contrasted)
-    ndvi_contrasted = contrast(ndvi)
-    # color map the dark ndvi contrasted img
-    color_mapped_prep = ndvi_contrasted.astype(np.uint8)
-    color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
-    cv2.imwrite("img/imageNdvi%s.jpg" % i, color_mapped_image)
-
-
-
+        camera = PiCamera()
+        camera.resolution = (1296,972) #qui dobbiamo scegliere la risoluzione delle immagini che vogliamo 
+        camera.start_preview()
+        for i in range(1):   #all'interno dell' range dobbiamo scegliere quante foto fare scattare al programma durante le tre ore
+            # Camera warm-up time
+            sleep(2)
+            camera.capture("img/image%s.jpg" % i) 
+            # load the original img
+            original = cv2.imread("imgage%s.jpg" % i)
+            contrasted = contrast(original)
+            ndvi = calc_ndvi(contrasted)
+            ndvi_contrasted = contrast(ndvi)
+            # color map the dark ndvi contrasted img
+            color_mapped_prep = ndvi_contrasted.astype(np.uint8)
+            color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
+            cv2.imwrite("img/imageNdvi%s.jpg" % i, color_mapped_image)
+            
     else:
         #is dark
 
