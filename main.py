@@ -1,7 +1,6 @@
 #code that makes the photos
 from time import sleep
 from picamera import PiCamera
-# from pathlib import Path
 import cv2
 import numpy as np
 from fastiecm import fastiecm
@@ -41,7 +40,6 @@ while True:
     t = timescale.now()
     if ISS.at(t).is_sunlit(ephemeris):
         #there is light: we run our experiment
-        #base_folder = Path(__file__).parent.resolve()
 
         camera = PiCamera()
         camera.resolution = (1296,972) #qui dobbiamo scegliere la risoluzione delle immagini che vogliamo 
@@ -62,13 +60,4 @@ while True:
             
     else:
         #is dark
-
-
-
-
-
-
-
-
-
-
+        b=1
