@@ -1,7 +1,6 @@
 # code that makes the photos
 from time import sleep
 from picamera import PiCamera
-# from pathlib import Path
 import cv2
 import numpy as np
 from fastiecm import fastiecm
@@ -41,8 +40,8 @@ timescale = load.timescale()
 while True:
     t = timescale.now()
     if ISS.at(t).is_sunlit(ephemeris):
-        # there is light: we run our experiment
-        #base_folder = Path(__file__).parent.resolve()
+        #there is light: we run our experiment
+
 
         camera = PiCamera()
         # qui dobbiamo scegliere la risoluzione delle immagini che vogliamo
@@ -60,7 +59,7 @@ while True:
             # color map the dark ndvi contrasted img
             color_mapped_prep = ndvi_contrasted.astype(np.uint8)
             color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
-            cv2.imwrite("img/imageNdvi%s.jpg" % i, color_mapped_image)
-
+            cv2.imwrite("img/imageNdvi%s.jpg" % i, color_mapped_image)       
     else:
-        # is dark
+        #is dark
+        b=1
