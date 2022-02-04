@@ -56,22 +56,22 @@ def calc_ndvi (img):
 
 
 # display the image
-display(original, 'Original')
+#display(original, 'Original')
 
 contrasted = contrast(original)
-display(contrasted, 'Contrasted original')
+#display(contrasted, 'Contrasted original')
 #cv2.imwrite('img/Contrasted_original.png', contrasted)
 
 ndvi = calc_ndvi(contrasted)
-display(ndvi, 'NDVI')
+#display(ndvi, 'NDVI')
 #cv2.imwrite('img/ndvi.png', ndvi)
 
 ndvi_contrasted = contrast(ndvi)
-display(ndvi_contrasted, 'NDVI Contrasted')
+#display(ndvi_contrasted, 'NDVI Contrasted')
 cv2.imwrite('img/ndvi_contrasted.png', ndvi_contrasted)
 
 # color map the dark ndvi contrasted img
 color_mapped_prep = ndvi_contrasted.astype(np.uint8)
 color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
-display(color_mapped_image, 'Color mapped')
+#display(color_mapped_image, 'Color mapped')
 cv2.imwrite('img/color_mapped_image.png', color_mapped_image)
