@@ -14,9 +14,10 @@ POST ESPERIMENTO
 
 ALTRO
 3gB a disposizione:
-foto = 13Mb
-tot fot = 230 ( in realta 2000 ma nella meta del tempo è buio e scarta)
-1 foto ogni 24s
+foto = 5.5 Mb
+tot fot = 500 
+1 foto ogni 14
+
 
 DA RIVEDERE
 - nel webinar dicono che nuova camera fa immagini molto più grandi tipo 12mB

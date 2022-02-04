@@ -36,30 +36,35 @@ def calc_ndvi(img):
 
 ephemeris = load('de421.bsp')
 timescale = load.timescale()
+cont = 0 # we use external variable because we don't it to be re inizialized
 
 while True:
     t = timescale.now()
-    if ISS.at(t).is_sunlit(ephemeris):
+    if ISS.at(t).is_sunlit(ephemeris)==False:
         #there is light: we run our experiment
-
 
         camera = PiCamera()
         # qui dobbiamo scegliere la risoluzione delle immagini che vogliamo
         camera.resolution = (1296, 972)
         camera.start_preview()
-        for i in range(10):  # all'interno dell' range dobbiamo scegliere quante foto fare scattare al programma durante le tre ore
+
+        
+        x = cont # we use external variable because we don't it to be re inizialized
+        for x in range(500):  # all'interno dell' range dobbiamo scegliere quante foto fare scattare al programma durante le tre ore
             # Camera warm-up time
             sleep(2)
-            camera.capture("img/image%s.jpg" % i)
+            camera.capture("img/image%s.jpg" % cont)
             # load the original img
-            original = cv2.imread("imgage%s.jpg" % i)
+            original = cv2.imread("imgage%s.jpg" % cont)
             contrasted = contrast(original)
             ndvi = calc_ndvi(contrasted)
             ndvi_contrasted = contrast(ndvi)
             # color map the dark ndvi contrasted img
             color_mapped_prep = ndvi_contrasted.astype(np.uint8)
             color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
-            cv2.imwrite("img/imageNdvi%s.jpg" % i, color_mapped_image)       
+            cv2.imwrite("img/imageNdvi%s.jpg" % cont, color_mapped_image)
+            cont = cont+1
+            sleep(12) # in total 14 seconds of gap between 2 images  
     else:
         #is dark
         b=1
