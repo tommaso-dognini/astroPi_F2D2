@@ -44,7 +44,7 @@ while True:
 
         camera = PiCamera()
         # qui dobbiamo scegliere la risoluzione delle immagini che vogliamo
-        camera.resolution = (1296, 972)
+        #camera.resolution = (1296, 972)
         #camera.start_preview()
 
         
@@ -52,9 +52,9 @@ while True:
         for x in range(500):  # all'interno dell' range dobbiamo scegliere quante foto fare scattare al programma durante le tre ore
             # Camera warm-up time
             sleep(2)
-            camera.capture("img/image%s.jpg" % x)
+            camera.capture("img/image%s.png" % x)
             # load the original img
-            original = cv2.imread("imgage%s.jpg" % x)
+            original = cv2.imread("img/image%s.png" % x)
             original = np.array(original, dtype=float)/float(255)
             contrasted = contrast(original)
             ndvi = calc_ndvi(contrasted)
@@ -62,9 +62,10 @@ while True:
             # color map the dark ndvi contrasted img
             color_mapped_prep = ndvi_contrasted.astype(np.uint8)
             color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
-            cv2.imwrite("img/imageNdvi%s.jpg" % x, color_mapped_image)
+            cv2.imwrite("img/imageNdvi%s.png" % x, color_mapped_image)
             cont = cont+1
             sleep(12) # in total 14 seconds of gap between 2 images  
     else:
         #is dark
         b=1
+        print(b)

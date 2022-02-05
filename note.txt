@@ -1,6 +1,6 @@
 CODICE
-- sistemare problema camera
-- aggiungere codice posizione ISS
++ sistemare problema camera
++ aggiungere codice posizione ISS
 - aggiungere codice per immagini + posizione
 + sistemare codice 
 + aggiungere codice che riconosce giorno- notte
@@ -9,7 +9,7 @@ CODICE
 
 POST ESPERIMENTO 
 - confronto con immagini
-- prepare una lista di immagini per confronto 
++ prepare una lista di immagini per confronto 
 
 
 ALTRO

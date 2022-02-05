@@ -7,7 +7,7 @@ from fastiecm import fastiecm
 
 
 # load the original img
-original = cv2.imread('img/park.png')
+original = cv2.imread('img/image0.png')
 
 # function to dispaly and resize the img
 def display(img, img_name):
