@@ -1,4 +1,5 @@
-# code that makes the photos
+"""F2D2: astroPi code """
+
 from time import sleep
 from picamera import PiCamera
 import cv2
@@ -7,6 +8,7 @@ from fastiecm import fastiecm
 from orbit import ISS
 from skyfield.api import load
 
+""" FUNCTIONS """
 
 # function to increase the contrast
 def contrast(img):
@@ -20,8 +22,6 @@ def contrast(img):
     return out
 
 # function to culculate the ndvi index
-
-
 def calc_ndvi(img):
     # create the variabels for the 3 colors channels: red. green and blue
     b, g, r = cv2.split(img)
@@ -33,38 +33,84 @@ def calc_ndvi(img):
     ndvi = (b.astype(float) - r) / bottom
     return ndvi
 
+# function to convert position in exif data with correct type (from angle to string)
+def convert(angle):
+    """
+    Convert a `skyfield` Angle to an EXIF-appropriate
+    representation (rationals)
+    e.g. 98° 34' 58.7 to "98/1,34/1,587/10"
 
+    Return a tuple containing a boolean and the converted angle,
+    with the boolean indicating if the angle is negative.
+    """
+    sign, degrees, minutes, seconds = angle.signed_dms()
+    exif_angle = f'{degrees:.0f}/1,{minutes:.0f}/1,{seconds*10:.0f}/10'
+    return sign < 0, exif_angle
+
+# shoot the img and add location as exif data
+def capture(camera, image):
+    """Use `camera` to capture an `image` file with lat/long EXIF data."""
+    point = ISS.coordinates()
+
+    # Convert the latitude and longitude to EXIF-appropriate representations
+    south, exif_latitude = convert(point.latitude)
+    west, exif_longitude = convert(point.longitude)
+
+    # Set the EXIF tags specifying the current location
+    camera.exif_tags['GPS.GPSLatitude'] = exif_latitude
+    camera.exif_tags['GPS.GPSLatitudeRef'] = "S" if south else "N"
+    camera.exif_tags['GPS.GPSLongitude'] = exif_longitude
+    camera.exif_tags['GPS.GPSLongitudeRef'] = "W" if west else "E"
+
+    # Capture the image
+    camera.capture(image)
+
+
+"""MAIN"""
+
+# load the iss position with skyfield library
 ephemeris = load('de421.bsp')
 timescale = load.timescale()
-cont = 0 # we use external variable because we don't it to be re inizialized
+cont = 0 # we use external variable to count the number of img taken and set it to a max based on the available space (3gB)
+b=0 # simulates the img during the night-dark period
 
 while True:
     t = timescale.now()
-    if ISS.at(t).is_sunlit(ephemeris)==False:
-        #there is light: we run our experiment
-
+    if ISS.at(t).is_sunlit(ephemeris): #run the experiment only in light 
+       
         camera = PiCamera()
-        # qui dobbiamo scegliere la risoluzione delle immagini che vogliamo
-        camera.resolution = (1296, 972)
-        camera.start_preview()
-
         
-        x = cont # we use external variable because we don't it to be re inizialized
-        for x in range(500):  # all'interno dell' range dobbiamo scegliere quante foto fare scattare al programma durante le tre ore
-            # Camera warm-up time
+        # img resolution settings
+        x_res = 4056
+        y_res = 3040
+        camera.resolution = (x_res, y_res)
+        
+        x = cont # we don't want x to be inizialized when iss switch from dark to light 
+        for x in range(150):  # 3gb of space, max number of img (about 10mB) = 300, we save original and ndvi img so we shoot only 150
             sleep(2)
-            camera.capture("img/image%s.jpg" % cont)
+
+            # add exif data and shoot img
+            capture(camera, "img/img%s.jpg" % x) 
+            
             # load the original img
-            original = cv2.imread("imgage%s.jpg" % cont)
-            contrasted = contrast(original)
+            original = cv2.imread("img/img%s.jpg" % x)
+            original = np.array(original, dtype=float)/float(255)
+            contrasted = contrast(original) # apply contrast to original
             ndvi = calc_ndvi(contrasted)
-            ndvi_contrasted = contrast(ndvi)
+            ndvi_contrasted = contrast(ndvi) #apply contrast to ndvi
+
             # color map the dark ndvi contrasted img
             color_mapped_prep = ndvi_contrasted.astype(np.uint8)
             color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
-            cv2.imwrite("img/imageNdvi%s.jpg" % cont, color_mapped_image)
+            
+            #crop the image
+            cropped_image= color_mapped_image[400:2450, 1200:3200]
+            cv2.imwrite("ndvi/Ndvi%s.jpg" % x, cropped_image)
+            
             cont = cont+1
-            sleep(12) # in total 14 seconds of gap between 2 images  
+            sleep(34) # in total 36 seconds of gap between 2 images  (36-2 at the start)
     else:
-        #is dark
-        b=1
+        # ISS is in the dark
+        print('buio %s' %b)
+        b = b+1
+        sleep(36) #simualte sleep of time gap equale to gap between to img
