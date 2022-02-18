@@ -1,7 +1,10 @@
 CODICE
-- sistemare codice per immagini + posizione
-- aggiungere contrasto
 - taglio al centro dell'immagine
+- controllo su risoluzioni
+- risolvere problema gpu
+
++ sistemare codice per immagini + posizione
++ aggiungere contrasto
 
 + veririfica spazio con test di 3 ore
 
@@ -19,11 +22,15 @@ POST ESPERIMENTO
 
 ALTRO
 3gB a disposizione:
-foto = 5.5 Mb
-tot fot = 500 
-1 foto ogni 14
+foto = 10 Mb
+tot fot = 300 
+foto da scattare = 150
+1 foto ogni 36
 
 
 token bastardo
 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
+
+login
+pssw: esa2022!
 
