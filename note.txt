@@ -1,0 +1,29 @@
+CODICE
+- sistemare codice per immagini + posizione
+- aggiungere contrasto
+- taglio al centro dell'immagine
+
++ veririfica spazio con test di 3 ore
+
++ aggiungere codice posizione ISS
++ sistemare problema camera
++ sistemare codice 
++ aggiungere codice che riconosce giorno- notte
++ verificare versione su computerino 
+
+
+POST ESPERIMENTO 
++ calcolo ndvi su immmagini scelte 
++ prepare una lista di immagini per confronto 
+
+
+ALTRO
+3gB a disposizione:
+foto = 5.5 Mb
+tot fot = 500 
+1 foto ogni 14
+
+
+token bastardo
+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
+
