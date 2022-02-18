@@ -7,7 +7,7 @@ from fastiecm import fastiecm
 
 
 # load the original img
-original = cv2.imread('img/park.png')
+original = cv2.imread('3.jpg')
 
 # function to dispaly and resize the img
 def display(img, img_name):
@@ -56,22 +56,29 @@ def calc_ndvi (img):
 
 
 # display the image
-display(original, 'Original')
+#display(original, 'Original')
 
 contrasted = contrast(original)
-display(contrasted, 'Contrasted original')
+#display(contrasted, 'Contrasted original')
 #cv2.imwrite('img/Contrasted_original.png', contrasted)
 
 ndvi = calc_ndvi(contrasted)
-display(ndvi, 'NDVI')
+#display(ndvi, 'NDVI')
 #cv2.imwrite('img/ndvi.png', ndvi)
 
 ndvi_contrasted = contrast(ndvi)
-display(ndvi_contrasted, 'NDVI Contrasted')
-cv2.imwrite('img/ndvi_contrasted.png', ndvi_contrasted)
+
+#display(ndvi_contrasted, 'NDVI Contrasted')
+#cv2.imwrite('img/ndvi_contrasted.png', ndvi_contrasted)
 
 # color map the dark ndvi contrasted img
 color_mapped_prep = ndvi_contrasted.astype(np.uint8)
 color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
-display(color_mapped_image, 'Color mapped')
-cv2.imwrite('img/color_mapped_image.png', color_mapped_image)
+#display(color_mapped_image, 'Color mapped')
+cv2.imwrite('ndvi.jpg', color_mapped_image)
+
+# cropp (y, x)
+cropped_image = color_mapped_image[400:2450,1200:3200]
+cv2.imwrite('cropped.jpg', cropped_image)
+
+
