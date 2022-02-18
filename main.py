@@ -67,10 +67,10 @@ def capture(camera, image):
 ephemeris = load('de421.bsp')
 timescale = load.timescale()
 cont = 0 # we use external variable because we don't it to be re inizialized
-
+b=0
 while True:
     t = timescale.now()
-    if ISS.at(t).is_sunlit(ephemeris)== False:
+    if ISS.at(t).is_sunlit(ephemeris):
         #there is light: we run our experiment
 
         camera = PiCamera()
@@ -99,5 +99,6 @@ while True:
             sleep(12) # in total 14 seconds of gap between 2 images  
     else:
         #is dark
-        b=1
-        print(b)
+        print('buio %s' %b)
+        b = b+1
+        sleep(14)

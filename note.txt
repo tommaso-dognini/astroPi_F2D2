@@ -1,6 +1,9 @@
 CODICE
 - sistemare codice per immagini + posizione
-- veririfica spazio con test di 3 ore
+- aggiungere contrasto
+- taglio al centro dell'immagine
+
++ veririfica spazio con test di 3 ore
 
 + aggiungere codice posizione ISS
 + sistemare problema camera
@@ -10,7 +13,7 @@ CODICE
 
 
 POST ESPERIMENTO 
-- calcolo ndvi su immmagini scelte 
++ calcolo ndvi su immmagini scelte 
 + prepare una lista di immagini per confronto 
 
 
