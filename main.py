@@ -45,7 +45,7 @@ def convert(angle):
     exif_angle = f'{degrees:.0f}/1,{minutes:.0f}/1,{seconds*10:.0f}/10'
     return sign < 0, exif_angle
 
-#
+# make the photograpf and add location as exif data
 def capture(camera, image):
     """Use `camera` to capture an `image` file with lat/long EXIF data."""
     point = ISS.coordinates()
@@ -75,7 +75,9 @@ while True:
 
         camera = PiCamera()
         # qui dobbiamo scegliere la risoluzione delle immagini che vogliamo
-        camera.resolution = (1296, 972)
+        x_res = 4056
+        y_res = 3040
+        camera.resolution = (x_res, y_res)
         #camera.start_preview()
 
         
@@ -83,10 +85,10 @@ while True:
         for x in range(500):  # all'interno dell' range dobbiamo scegliere quante foto fare scattare al programma durante le tre ore
             # Camera warm-up time
             sleep(2)
-            capture(camera, "img/image%s.png" % x)
-            #camera.capture("img/image%s.png" % x)
+            capture(camera, "img/image%s.jpg" % x)
+            #camera.capture("img/image%s.jpg" % x)
             # load the original img
-            original = cv2.imread("img/image%s.png" % x)
+            original = cv2.imread("img/image%s.jpg" % x)
             original = np.array(original, dtype=float)/float(255)
             contrasted = contrast(original)
             ndvi = calc_ndvi(contrasted)
@@ -94,7 +96,10 @@ while True:
             # color map the dark ndvi contrasted img
             color_mapped_prep = ndvi_contrasted.astype(np.uint8)
             color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
-            cv2.imwrite("ndvi/imageNdvi%s.png" % x, color_mapped_image)
+            #crop the image
+            color_mapped_image = color_mapped_image[0:2028, 507:1014]
+            cv2.imwrite("ndvi/imageNdvi%s.jpg" % x, color_mapped_image)
+            
             cont = cont+1
             sleep(12) # in total 14 seconds of gap between 2 images  
     else:

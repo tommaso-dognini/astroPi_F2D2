@@ -1,6 +1,9 @@
 CODICE
-- sistemare codice per immagini + posizione
 - taglio al centro dell'immagine
+- controllo su risoluzioni
+- risolvere problema gpu
+
++ sistemare codice per immagini + posizione
 + aggiungere contrasto
 
 + veririfica spazio con test di 3 ore
