@@ -1,7 +1,7 @@
 CODICE
 - sistemare codice per immagini + posizione
-- aggiungere contrasto
 - taglio al centro dell'immagine
++ aggiungere contrasto
 
 + veririfica spazio con test di 3 ore
 
