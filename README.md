@@ -1,4 +1,9 @@
 # AstroPi F2D2: Project documentation
+### Unboxing
+Here is a video of the unboxing experience of our astroPi kit.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XQVWcYVsONQ?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Project description
 The code we have created has the purpose to capture the images of daylight landscapes on the earth and calculate the NDVI index in order to compare it to samples calculated with our code using public photos and samples data that are available for all teams .
 
