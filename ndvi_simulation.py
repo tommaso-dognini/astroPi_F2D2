@@ -8,7 +8,7 @@ from fastiecm import fastiecm
 
 # load the original img
 
-original = cv2.imread('3.jpg')
+original = cv2.imread('./fotoesempio/7.jpg')
 
 
 # function to dispaly and resize the img
@@ -79,11 +79,11 @@ color_mapped_prep = ndvi_contrasted.astype(np.uint8)
 color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
 #display(color_mapped_image, 'Color mapped')
 
-cv2.imwrite('ndvi.jpg', color_mapped_image)
+cv2.imwrite('ndvi7.jpg', color_mapped_image)
 
 # cropp (y, x)
 cropped_image = color_mapped_image[400:2450,1200:3200]
-cv2.imwrite('cropped.jpg', cropped_image)
+cv2.imwrite('ndvi_cropped7.jpg', cropped_image)
 
 
 
