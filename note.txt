@@ -1,7 +1,8 @@
 CODICE
-- taglio al centro dell'immagine
-- controllo su risoluzioni
-- risolvere problema gpu
++- risolvere problema gpu
+
++ taglio al centro dell'immagine
++ controllo su risoluzioni
 
 + sistemare codice per immagini + posizione
 + aggiungere contrasto
