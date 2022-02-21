@@ -2,7 +2,8 @@
 ### Unboxing
 Here is a video of the unboxing experience of our astroPi kit.
 
-[![Watch the video](https://www.youtube.com/embed/XQVWcYVsONQ?start=1)](https://www.youtube.com/embed/XQVWcYVsONQ?start=1)
+[![Watch the video](https://user-images.githubusercontent.com/74106088/155032428-0b592a31-b1f0-4cf4-85b3-c917488f39f3.jpg)](https://www.youtube.com/embed/XQVWcYVsONQ?start=1)
+
 
 ### Project description
 The code we have created has the purpose to capture the images of daylight landscapes on the earth and calculate the NDVI index in order to compare it to samples calculated with our code using public photos and samples data that are available for all teams .
