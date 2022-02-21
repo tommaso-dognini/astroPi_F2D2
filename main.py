@@ -107,13 +107,12 @@ camera.resolution = (x_res, y_res)
 # set file path
 base_folder = Path(__file__).parent.resolve()
 
-# 3gb of space, max number of img (about 10mB) = 300, we save original and ndvi img so we shoot only 150
-while cont != 300 and (t_now < t_start + timedelta(seconds=60)):
+# 3gb of space, max number of img (about 5mB) = 600, we save original and ndvi img so we shoot only 300
+# our code will stop 3 minutes before the ending time
+while cont != 300 and (t_now < t_start + timedelta(seconds=10620)):
     t = timescale.now()
     if ISS.at(t).is_sunlit(ephemeris):  # run the experiment only in light
-        try: # we don't want our code to fail if error 
-            # for x in range(2):
-            sleep(2)
+        try:  # we don't want our code to fail if error
 
             # add exif data and shoot img
             capture(camera, f"{base_folder}/img{cont}.jpg")
@@ -133,16 +132,17 @@ while cont != 300 and (t_now < t_start + timedelta(seconds=60)):
             cropped_image = color_mapped_image[400:2450, 1200:3200]
             cv2.imwrite(f"{base_folder}/Ndvi{cont}.jpg", cropped_image)
 
-            sleep(6)  # in total 36 seconds of gap between 2 images  (36-2 at the start)
+            # in total 20 seconds of gap between 2 images  (19 seconds of runtime and 1 second of sleep)
+            sleep(1)
             cont = cont+1
             t_now = datetime.now()
 
         except:
-            print('error') # in case of errors
+            print('error')  # in case of errors
 
     else:
         # ISS is in the dark
         print('dark %s' % b)
         b = b+1
-        sleep(8)  # simualte sleep of time gap equal to gap between to img
+        sleep(20)  # simualte sleep of time gap equal to gap between to img
         t_now = datetime.now()
