@@ -29,9 +29,5 @@ foto da scattare = 150
 1 foto ogni 36
 
 
-token bastardo
-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
 
-login
-pssw: esa2022!
 
