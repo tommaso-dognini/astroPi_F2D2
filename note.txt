@@ -1,3 +1,24 @@
+ANALISI RISULTATI
+
+Immagini buone
+
+- 299 (fiume) e paraggi
+- 131 e paraggi
+- 120
+- 96
+- 72
+- 68 69
+- 63
+
+Molte nuvole 
+Molto nero di notte
+
+
+
+
+
+-----------------
+
 CODICE
 +- risolvere problema gpu
 
@@ -27,6 +48,13 @@ foto = 10 Mb
 tot fot = 300 
 foto da scattare = 150
 1 foto ogni 36
+
+
+
+
+
+
+
 
 
 
