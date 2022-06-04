@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 
 
 # reads an input image as colored
-img = cv2.imread('img/cropped_with_bg/cropped58.jpg')
+img = cv2.imread('img/ndvi/ndvi58.jpg')
 
 
 # BLUE

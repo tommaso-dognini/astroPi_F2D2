@@ -38,11 +38,12 @@ def calc_ndvi(img):
 # array with the id numbers of the chosen images (the good ones)
 a = [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 72, 86, 87, 89, 90, 91, 92, 94,
      95, 95, 96, 97, 98, 99, 120, 121, 122, 123, 130, 131, 277, 278, 279, 296, 297, 298, 299]
-b =['cropped_squared_123']
+
+chosen = [63, 68, 90, 91, 95, 97, 130, 131, 278, 270, 299]
 # repeat the process for every image
-for i in b:
+for i in [279]:
     # load the original img
-    original = cv2.imread(f'img/{i}.jpg')
+    original = cv2.imread(f'img/chosen/{i}.png')
     contrasted = contrast(original)
 
     #contrasted = contrast(original)
@@ -53,4 +54,4 @@ for i in b:
     color_mapped_prep = ndvi_contrasted.astype(np.uint8)
     color_mapped_image = cv2.applyColorMap(color_mapped_prep, fastiecm)
     # save the ndvi image
-    cv2.imwrite(f'img/ndvi/ndvi{i}.jpg', color_mapped_image)
+    cv2.imwrite(f'img/chosen/ndvi{i}.jpg', color_mapped_image)

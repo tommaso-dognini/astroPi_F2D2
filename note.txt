@@ -1,5 +1,51 @@
+FOTO E COORDINATE
+ 1)- 299: coorindate = 50° 43' 5" N, 45° 55' 36" E
+
+ 2)- 279,278: coordinate = 41° 33' 23" N, 17° 28' 3" E
+
+ 3)- 131,130: coordinate = 35° 42' 36" N, 137° 29'24" E
+
+ 4)- 97,95: cooridnate = 51° 30' 40" N, 92° 34' 16" E
+
+ 5)- 91,90: coordinate = 51° 43' 38" N, 80° 44' 48" E
+
+ 6)- 68: coordinate = 44° 37' 18" N, 47° 23' 50" E
+
+ 7)- 63: coordinate = 41° 42' 31" N, 41° 20' 31" E
+
+
+
+
+
+
+ARTICOLO GRASSI
+- chi siamo 
+- che cosa è esa
+- che progetto è 
+- che cosa fa il codice
+- i risultati che abbimaoottenuto => con immagini
+- come abbiamo intenzione di usare immagini
+-------------------
 ANALISI RISULTATI
 
+Percetuali
+
+-  % terra =
+-  % oceano =
+
+% senza nuvole = 13% corrisponde con immagini scelte in sostanza
+% nero 80/300  = 26,67%
+% immmagini buone  = 40/300 = 13,33%
+immagini significative tra quelle buone =
+------------------
+Analisi immagini ndvi
+
+- immagini ottenute hanno ndvi non reale 
+- ipotesi che sia dovuto al crop dell'immagine sbaglaito e al contrasto
+- cludere concontgrasto immagini rovina ndvi da prove fatte conn sfonfdi di colori diversi
+- scelto di usare sfondo bianco e talgiare immagini a quadrato
+
+--------------------
 Immagini buone
 
 - 299 (fiume) e paraggi
@@ -12,11 +58,6 @@ Immagini buone
 
 Molte nuvole 
 Molto nero di notte
-
-
-
-
-
 -----------------
 
 CODICE
