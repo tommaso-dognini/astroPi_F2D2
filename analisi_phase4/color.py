@@ -38,25 +38,34 @@ def calc_ndvi(img):
     ndvi = (b.astype(float) - r) / bottom
     return ndvi
 
-chosen = [63, 68, 90, 91, 95, 97, 130, 131, 278, 270, 299]
 
-for i in [97]:
+chosen = [63, 68, 90, 91, 95, 130, 131, 278, 270, 299]
+
+for i in [299]:
     # load the original img
-    original = cv2.imread(f'img/chosen/{i}.jpg')
+    original = cv2.imread(f'img/chosen/{i}.png')
     contrasted = contrast(original)
 
     #contrasted = contrast(original)
     ndvi = calc_ndvi(contrasted)
     ndvi_contrasted = contrast(ndvi)
 
-    fig = plt.figure()
+    fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 6))
+    # ax0
+    ax0.imshow(cv2.cvtColor(original, cv2.COLOR_BGR2RGB))
+    ax0.set_xticks([])
+    ax0.set_yticks([])
+    ax0.set_title('IR', fontsize=20)
+
+    # ax1
     imgplot = plt.imshow(ndvi_contrasted)
     imgplot.set_cmap('YlGn')
     cbar = plt.colorbar(orientation="vertical", shrink=1, pad=0.05, aspect=20)
-    cbar.set_label(label='NDVI')
+    # cbar.set_label(label='NDVI')
     cbar.set_ticks([])
-    plt.clim(0,255)
+    plt.clim(0, 255)
     plt.yticks([])
     plt.xticks([])
-    plt.title('NDVI image', fontsize=18 )
+    ax1.set_title('NDVI', fontsize=20)
+
     fig.savefig(f'img/chosen/color{i}.jpg', dpi=300)
