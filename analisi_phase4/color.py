@@ -1,14 +1,9 @@
-from ast import NodeVisitor
 from cProfile import label
-from fastiecm import fastiecm
+import fontTools
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 from matplotlib import image as mpimg
-
-
-
-
 
 # This program is used to calculate ndvi index for every image obtained after it was cropped.
 
@@ -43,24 +38,25 @@ def calc_ndvi(img):
     ndvi = (b.astype(float) - r) / bottom
     return ndvi
 
+chosen = [63, 68, 90, 91, 95, 130, 131, 278, 270, 299]
 
+for i in [279,299]:
+    # load the original img
+    original = cv2.imread(f'img/chosen/{i}.png')
+    contrasted = contrast(original)
 
+    #contrasted = contrast(original)
+    ndvi = calc_ndvi(contrasted)
+    ndvi_contrasted = contrast(ndvi)
 
-# load the original img
-original = cv2.imread(f'img/chosen/279.png')
-contrasted = contrast(original)
-
-#contrasted = contrast(original)
-ndvi = calc_ndvi(contrasted)
-ndvi_contrasted = contrast(ndvi)
-
-imgplot = plt.imshow(ndvi_contrasted)
-imgplot.set_cmap('bwr')
-cbar = plt.colorbar(orientation="horizontal", format='%.1f', shrink=1, pad=0.15, aspect=20)
-cbar.set_label(label='NDVI')
-#cbar.set_ticks()
-cbar.set_ticklabels(['-1', '0', '1'])
-#plt.clim(0,1000)
-plt.show()
-
-
+    fig = plt.figure()
+    imgplot = plt.imshow(ndvi_contrasted)
+    imgplot.set_cmap('YlGn')
+    cbar = plt.colorbar(orientation="vertical", shrink=1, pad=0.05, aspect=20)
+    cbar.set_label(label='NDVI')
+    cbar.set_ticks([])
+    plt.clim(0,255)
+    plt.yticks([])
+    plt.xticks([])
+    plt.title('NDVI image', fontsize=18 )
+    fig.savefig(f'img/chosen/color{i}.jpg', dpi=300)

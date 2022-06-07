@@ -2,7 +2,6 @@
 
 # importing required libraries of opencv
 from cProfile import label
-from turtle import color
 import cv2
 # importing library for plotting
 from matplotlib import pyplot as plt
