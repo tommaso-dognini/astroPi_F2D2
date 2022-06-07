@@ -41,9 +41,9 @@ a = [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 72, 86, 87, 89, 90, 91,
 
 chosen = [63, 68, 90, 91, 95, 97, 130, 131, 278, 270, 299]
 # repeat the process for every image
-for i in [279]:
+for i in [97]:
     # load the original img
-    original = cv2.imread(f'img/chosen/{i}.png')
+    original = cv2.imread(f'img/chosen/{i}.jpg')
     contrasted = contrast(original)
 
     #contrasted = contrast(original)

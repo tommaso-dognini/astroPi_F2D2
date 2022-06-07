@@ -38,11 +38,11 @@ def calc_ndvi(img):
     ndvi = (b.astype(float) - r) / bottom
     return ndvi
 
-chosen = [63, 68, 90, 91, 95, 130, 131, 278, 270, 299]
+chosen = [63, 68, 90, 91, 95, 97, 130, 131, 278, 270, 299]
 
-for i in [279,299]:
+for i in [97]:
     # load the original img
-    original = cv2.imread(f'img/chosen/{i}.png')
+    original = cv2.imread(f'img/chosen/{i}.jpg')
     contrasted = contrast(original)
 
     #contrasted = contrast(original)
