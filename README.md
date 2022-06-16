@@ -8,6 +8,7 @@
 **School:** Liceo Scientifico e Musicale G.B. Grassi (LC) <br/>
 
 ## *The project:*
+[F2D2_Report_AstroPiProject.docx.pdf](https://github.com/tommaso-dognini/astroPi_F2D2/files/8916794/F2D2_Report_AstroPiProject.docx.pdf)
 
 
 ## *The phases:*
