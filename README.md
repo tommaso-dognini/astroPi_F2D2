@@ -2,15 +2,31 @@
 ![copertina](https://user-images.githubusercontent.com/74106088/174007246-b99d3270-4896-4358-bb20-38bcde70d221.PNG)
 
 
-## *The team*
+## The team
 **Members:** Tommaso Dognini, Stefano Fanciosti, Pietro Donghi, Lorenzo Fumagalli <br/>
 **Tutor:** Emanuela Magni <br/>
-**School:** Liceo Scientifico e Musicale G.B. Grassi (LC) <br/>
+**School:** Liceo Scientifico e Musicale G.B. Grassi (http://www.grassilecco.edu.it/) <br/>
 
-## *The project*
+## The project
 Teams of young people design and program a scientific experiment to run on board the International Space Station.
 
 ## Phase 1: Design
+
+### What is your experiment idea?
+
+With the experiment the team wants to observe from a very different perspective (from which we are not used to seeing things) the Earth vegetation. They want to investigate how this vegetation has changed in time,  what were the causes of this change, and what consequences it will have. 
+With the data collected from the Astro Pi and the ability to know  where the camera was pointed at the time it shot our images, students will be able to compare the conditions of the field at the time of the experiment with the condition of the field in the past, thanks to old satellite imagery.
+The Earth's vegetation is the fertile ground on which animals and humans live and depend on, that’s why a deep understanding of its changes can help us understand how life on Earth will change.
+
+### How will you use the Astro Pi computers to perform your experiment?
+
+My team will collect data using the “near-infrared camera” sensor mounted on the Astro Pi, which will let us take infrared images of the Earth surface. These images can be used to determine the presence of green vegetation in that area using the Normalized Difference Vegetation Index (NDVI) index. 
+
+The NDVI index values range between -1 and 1. They derive from the ratio between the difference and the sum of the radiations reflected in the near infrared and in the red: NDVI = (NIR -RED) / (NIR + RED). For this reason the negative values will be obtained in areas where there is water, snow or clouds. Around 0 there will be areas of rocky or sandy expanses, around 0.5 shrubs and pastures while around 1 rainforests.
+For this purpose we will use the near-infrared camera to obtain images of the Earth's surface. Each image will be treated as a matrix of pixels. The astro Pi computer will then calculate the NDVI index for each pixel. At the end of this process we will obtain a matrix of NDVI index values for every image shoted. From these data, a false color image will be created, depicting the same area identified by the photograph. This will allow us to visually understand the value of the NDVI index.
+
+From these modified images it will be possible to determine the presence and density of green vegetation, and therefore the type of biome. Comparing the result of this analysis with known data we will be able to determine the changes that happened in that area.
+
 
 ## Phase 2: Create
 
