@@ -2,14 +2,22 @@
 ![copertina](https://user-images.githubusercontent.com/74106088/174007246-b99d3270-4896-4358-bb20-38bcde70d221.PNG)
 
 
-## *The team:*
+## *The team*
 **Members:** Tommaso Dognini, Stefano Fanciosti, Pietro Donghi, Lorenzo Fumagalli <br/>
 **Tutor:** Emanuela Magni <br/>
 **School:** Liceo Scientifico e Musicale G.B. Grassi (LC) <br/>
 
-## *The project:*
-[F2D2_Report_AstroPiProject.docx.pdf](https://github.com/tommaso-dognini/astroPi_F2D2/files/8916794/F2D2_Report_AstroPiProject.docx.pdf)
+## *The project*
+Teams of young people design and program a scientific experiment to run on board the International Space Station.
 
+## Phase 1: Design
+
+## Phase 2: Create
+
+## Phase 3: Deploy
+
+## Phase 4: Analize
+PDF report: [F2D2_Report_AstroPiProject.pdf](https://github.com/tommaso-dognini/astroPi_F2D2/files/8926594/F2D2_Report_AstroPiProject.pdf)
 
 ### 1. Introduction
 Our team has created a code in order to shoot images of our planet’s landscapes, store the useful ones and calculate for them the NDVI index. To gauge the process, we compared our images with NDVI images we obtained from standard samples available for all teams.
@@ -27,25 +35,20 @@ However, we believe that our original idea still works perfectly with the change
 
 ### 3. Experiment results 
 From phase 3 we received 300 images. 80 (26.7%) were black or very dark because we used the .is_sunlit() method of the skyfield library to shoot during light time, but we could not avoid getting images during twilight. Of the 220 photos left, only 40 (13.4%) were distinguishable and had a clear and cloudless subject.
+
+![pie_chart](https://user-images.githubusercontent.com/74106088/174275948-e23a10b3-670e-444e-af13-b5007948e5b5.jpg)
+
 To perform the analysis we cropped the chosen images in a square to avoid black margins as we originally aimed to. 
 We then wrote a program that calculates the NDVI and creates the colour-mapped image. For this purpose, we looked for a better colour map that could enhance the variation of the NDVI index values. After some testing, we found that YlGn from matplotlib library suited our needs the best. 
 The legend shown in every image goes from -1 to +1, which are the min and max values of the index, where +1 represents very flourishing vegetation. 
 Here is what we obtained:
 
-| *Raw image*             |  *NDVI cropped* |
-:-------------------------:|:-------------------------:
-![1](https://user-images.githubusercontent.com/74106088/155032757-40b0926d-68ed-47dc-8aab-9fe55d71bd3e.jpg) |  ![ndvi_cropped1](https://user-images.githubusercontent.com/74106088/155032895-d307ae9c-a060-4d38-9816-e0b4d3f8a2b7.jpg)
-![3](https://user-images.githubusercontent.com/74106088/155033526-d5d9965c-a19c-4b22-bafd-e13d26a7dcfa.jpg)  |  ![ndvi_cropped3](https://user-images.githubusercontent.com/74106088/155033615-cd829b86-ffd6-4051-bb89-b12b8a075a10.jpg)
-![7](https://user-images.githubusercontent.com/74106088/155033730-02630fee-41de-4d6d-b7c8-6dd920aef6cd.jpg)  |  ![ndvi_cropped7](https://user-images.githubusercontent.com/74106088/155033834-da629f76-ff8c-42cf-8a8c-e04ccb5a457d.jpg)
-![4](https://user-images.githubusercontent.com/74106088/155033911-bf882fca-9419-4a36-939a-ead378557402.jpg)  |  ![ndvi_cropped4](https://user-images.githubusercontent.com/74106088/155034044-00dd5ac0-4e96-425c-922f-c8ad49ee9497.jpg)
+![130](https://user-images.githubusercontent.com/74106088/174275278-ea65e472-e43f-4c0a-a9e2-9a4e67d83f9e.png)
+![299](https://user-images.githubusercontent.com/74106088/174275627-7fb5e1d7-c92f-4605-826c-62d84ea85326.png)
+![90](https://user-images.githubusercontent.com/74106088/174275227-d8b6145d-100c-48a9-9460-fad22a922745.png)
+![278](https://user-images.githubusercontent.com/74106088/174275306-27aa2921-3533-4458-91ed-84c833fe73fd.png)
 
-
-
-The dark-green area in picture number one is due to the presence of the Yumori National Park, a wooded area. Here the coloration is uniform, while the third picture presents different shades of green because the forest is rich in swamps and lakes. 
-
-The second and third NDVI images are very defined, so it is possible to recognise the lakes in the forest and the islands in the Volga river. The second image is also interesting because the dark-green area in the upper part is due to the presence of flourishing fields while in the down part the colouration is lighter for the presence of cities, as along the Japanese coast. 
-
-Using the NDVI index in the Gargano image we can understand the wood is now completely reborn after the wildfire happened in 2007 which destroyed 4.500ha of Mediterranean bush.
+The dark-green area in picture number one is due to the presence of the Yumori National Park, a wooded area. Here the coloration is uniform, while the third picture presents different shades of green because the forest is rich in swamps and lakes. The second and third NDVI images are very defined, so it is possible to recognise the lakes in the forest and the islands in the Volga river. The second image is also interesting because the dark-green area in the upper part is due to the presence of flourishing fields while in the down part the colouration is lighter for the presence of cities, as along the Japanese coast. Using the NDVI index in the Gargano image we can understand the wood is now completely reborn after the wildfire happened in 2007 which destroyed 4.500ha of Mediterranean bush.
 
 
 ### 4. Learnings
