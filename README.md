@@ -32,7 +32,12 @@ We then wrote a program that calculates the NDVI and creates the colour-mapped i
 The legend shown in every image goes from -1 to +1, which are the min and max values of the index, where +1 represents very flourishing vegetation. 
 Here is what we obtained:
 
-
+| *Raw image*             |  *NDVI cropped* |
+:-------------------------:|:-------------------------:
+![1](https://user-images.githubusercontent.com/74106088/155032757-40b0926d-68ed-47dc-8aab-9fe55d71bd3e.jpg) |  ![ndvi_cropped1](https://user-images.githubusercontent.com/74106088/155032895-d307ae9c-a060-4d38-9816-e0b4d3f8a2b7.jpg)
+![3](https://user-images.githubusercontent.com/74106088/155033526-d5d9965c-a19c-4b22-bafd-e13d26a7dcfa.jpg)  |  ![ndvi_cropped3](https://user-images.githubusercontent.com/74106088/155033615-cd829b86-ffd6-4051-bb89-b12b8a075a10.jpg)
+![7](https://user-images.githubusercontent.com/74106088/155033730-02630fee-41de-4d6d-b7c8-6dd920aef6cd.jpg)  |  ![ndvi_cropped7](https://user-images.githubusercontent.com/74106088/155033834-da629f76-ff8c-42cf-8a8c-e04ccb5a457d.jpg)
+![4](https://user-images.githubusercontent.com/74106088/155033911-bf882fca-9419-4a36-939a-ead378557402.jpg)  |  ![ndvi_cropped4](https://user-images.githubusercontent.com/74106088/155034044-00dd5ac0-4e96-425c-922f-c8ad49ee9497.jpg)
 
 
 
