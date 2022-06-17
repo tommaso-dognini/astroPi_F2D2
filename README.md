@@ -105,3 +105,6 @@ By using international libraries and code standards, we are now able to share ou
 We would like to thank the ESA and the Raspberry Pi Foundation for giving us the possibility to work on such a unique project which led us to develop new skills and knowledge. 
 This project has been a great opportunity for our career as students and worked for us as a compass in the process of choosing our future studies.
 
+## Local newspaper article
+- https://www.leccotoday.it/notizie/liceo-grassi-esa-astropi.html 
+- http://www.grassilecco.edu.it/newsite/index.php/notizie/aree-tematiche-bis/dicono-di-noi-stampa/702-studenti-di-5g-e-progetto-astro-pi-agenzia-spaziale-europea.html 
