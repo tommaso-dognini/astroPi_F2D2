@@ -1,4 +1,11 @@
 # AstroPi F2D2: Project documentation
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=git,py,raspberrypi,vscode,linux,md" />
+  </a>
+</p>
+
 ![copertina](https://user-images.githubusercontent.com/74106088/174007246-b99d3270-4896-4358-bb20-38bcde70d221.PNG)
 
 
